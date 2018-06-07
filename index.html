@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Word Guess Game|UCF Coding Bootcamp</title>
+		<meta name="author" content="Don Bedwell | timetourst@gmail.com">
+		<meta name="description" content="Word Guess Game">
+		<meta name="keywords" content="word, game, hangman, guess">
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	
+	<body>
+		<div id="container-guesses-remaining" class="stats">
+			Remaining Guesses
+			<div id="guesses-remaining">&nbsp;</div>
+		</div>
+			
+		<div id="container-letters-guessed" class="stats">
+			Letters Guessed
+			<div id="letters-guessed">&nbsp;</div>
+		</div>
+			
+		<div id="container-wins" class="stats">
+			Wins
+			<div id="wins">0</div>
+		</div>
+			
+		<div id="container-losses" class="stats">
+			Losses
+			<div id="losses">0</div>
+		</div>
+		
+		<button onclick="resetGame();">New Game</button>
+		
+		<h1>Guess the word!</h1>
+		<div id="the-word"></div>
+		<div id="game-status"></div>
+		
+		
+		<script src="code.js"></script>
+	</body>
+</html>

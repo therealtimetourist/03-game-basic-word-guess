@@ -1,0 +1,36 @@
+/* -- style sheet -- */
+html, body{
+	background-color: #ebebeb;
+	font: normal 14px/18px arial, sans-serif;
+}
+
+.stats{
+	display: inline-block;
+	margin: 6px;
+	padding: 10px;
+	border: 1px solid #000;
+	height: 30px;
+	text-align: center;
+}
+.stats div {
+	text-align: center;
+	font-size: 18px;
+	text-transform: uppercase;
+	height: 18px;
+}
+
+.guess-blanks{
+	width: 18px; height:24px;
+	margin:6px;
+	padding: 0px 6px;
+	border-bottom: 2px solid #000;
+	display: inline-block;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#game-status{
+	font: bold 18px/24px arial, sans-serif;
+	color: #ff0000;
+}
