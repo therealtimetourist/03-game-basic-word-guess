@@ -1,5 +1,6 @@
 # word-guess-basic
 A basic "hangman" word guess game.  All JavaScript (no jQuery... yet).
+You can play the game [here](https://therealtimetourist.github.io/word-guess-basic/index.html)
 
 **version 0.0.0**
 - Initial release of the game. 
