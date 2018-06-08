@@ -26,7 +26,7 @@ function resetGame(){
 	divGuessRemaining.textContent = guessRemaining;
 	divLettersGuessed.innerHTML = "&nbsp;";
 	setPlayField();
-	console.log(currentWord);
+	//console.log(currentWord);
 }
 
 // draw the new word blanks
@@ -98,8 +98,9 @@ document.onkeyup = function(e){
 		} else if(e.which){ // Netscape/Firefox/Opera
 			keynum = e.which;
 		}
-		
+		// set key input to lower case
 		myLetter = String.fromCharCode(keynum).toLowerCase();
+		// check key validity
 		validLetter = checkInput(myLetter);
 		
 		if(!validLetter){
