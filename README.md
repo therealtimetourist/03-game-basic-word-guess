@@ -1,11 +1,11 @@
 # word-guess-basic
 A basic "hangman" word guess game.  All JavaScript (no jQuery... yet).
 
-# version 0.0.0
+**version 0.0.0**
 - Initial release of the game. 
 - All current components functioning as expected.
 
-# version 0.0.1
+**version 0.0.1**
 - updated code to add more comments.
 - removed updateLetterGuessed() function as it was redundant.
 - removed alphabet array. KeyCode from keyboard is now used to determine valid input.
