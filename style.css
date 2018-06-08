@@ -30,6 +30,10 @@ html, body{
 	font-weight: bold;
 }
 
+#the-hint{
+	font: italic normal 14px/22px arial, sans-serif;
+}
+
 #game-status{
 	font: bold 18px/24px arial, sans-serif;
 	color: #ff0000;
