@@ -1,21 +1,23 @@
-
+// define DOM elements
 var divGuessRemaining = document.getElementById("guesses-remaining");
 var divLettersGuessed = document.getElementById("letters-guessed");
 var divWins = document.getElementById("wins");
 var divLosses = document.getElementById("losses");
 var divTheWord = document.getElementById("the-word");
 var divGameStatus = document.getElementById("game-status");
-
+// define global variables
 var words = ["zero", "one", "two", "three", "four"];
+var myLetter;
+var validLetter;
+var currentWord;
 var wins = 0;
 var losses = 0;
 var correctGuesses = 0;
-var currentWord;
 var guessRemaining = 5;
 var lettersGuessed = [];
 var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-// reset the game
+// reset game
 function resetGame(){
 	guessRemaining = 5;
 	lettersGuessed.length = 0;
@@ -46,17 +48,16 @@ function setPlayField(){
 
 // validate keyboard input are letters
 function checkInput(keynum){
-	//alert(keynum);
 	if (alphabet.indexOf(keynum) > -1){
-		//alert("valid");
+		// valid key
 		return 1;
 	} else{
-		//alert("not valid");
+		// invalid key
 		return 0;
 	}
 }
 
-// track all letters guessed and write to page
+// track letters guessed/write to page
 function updateLetterGuessed(myLetter){
 	if(lettersGuessed.indexOf(myLetter) > -1){
 		divGameStatus.textContent = "You already guessed " + myLetter;
@@ -66,7 +67,7 @@ function updateLetterGuessed(myLetter){
 	}
 	
 }
-
+// check for win
 function checkWin(){
 	if(correctGuesses === currentWord.length){
 		wins++;
@@ -75,7 +76,7 @@ function checkWin(){
 	}
 }
 
-// end of game
+// game over
 function gameOver(){
 	losses++;
 	divLosses.textContent = losses;
@@ -86,7 +87,6 @@ function gameOver(){
 	}
 	
 	divGameStatus.textContent = "GAME OVER! The word was " + currentWord;
-	//alert(losses);
 }
 
 // ** THE MAIN EVENT BEGIN ** //
@@ -99,11 +99,9 @@ document.onkeyup = function(e){
 			keynum = e.which;
 		}
 		
-		var myLetter = String.fromCharCode(keynum).toLowerCase();
-		//alert(String.fromCharCode(keynum).toLowerCase());
-		//alert(myLetter);
-		var validLetter = checkInput(myLetter);
-		//alert(currentWord.indexOf(myLetter));
+		myLetter = String.fromCharCode(keynum).toLowerCase();
+		validLetter = checkInput(myLetter);
+		
 		if(!validLetter){
 			divGameStatus.textContent = "That is not a valid letter guess.  Please try again.";
 			
@@ -113,12 +111,9 @@ document.onkeyup = function(e){
 			} else{
 				lettersGuessed.push(myLetter);
 				divLettersGuessed.textContent = lettersGuessed;
-			
+				// if my letter is in current word
 				if(currentWord.indexOf(myLetter) > -1){
-					//alert("it's in the word!");
 					for(var i = 0; i < currentWord.length; i++){
-						//alert(i);
-						//alert(currentWord[i]);
 						if (currentWord[i] === myLetter){
 							var g = document.getElementById("theWord" + i);
 							g.innerHTML = myLetter;
@@ -126,8 +121,8 @@ document.onkeyup = function(e){
 						}
 					}
 					checkWin();
+				// else my letter is not in the current word
 				} else{
-					// alert("it's not in the word!");
 					guessRemaining--;
 					divGuessRemaining.textContent = guessRemaining;
 					if(guessRemaining == 0){
